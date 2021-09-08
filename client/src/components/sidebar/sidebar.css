@@ -1,0 +1,82 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    height: 400px;
+    padding: 10px;
+    top:78px;
+    position: sticky;
+}
+
+.sidebarProfile {
+    display: flex;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgb(255, 187, 148);
+    border-radius: 10px;
+    flex-direction: column;
+    width: 200px;
+    align-items: center;
+    -webkit-box-shadow: 2px 3px 9px 1px rgba(79,79,79,0.63);
+    box-shadow: 2px 3px 9px 1px rgba(79,79,79,0.63);
+    
+}
+
+.sidebarProfileImage {
+    margin-top: 10px;
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
+
+}
+
+.sidebarProfileUsername {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.sidebarProfileUsername .username {
+    font-size: 15px;
+    font-weight: 500;
+    font-style: italic;
+}
+
+
+.sidebarProfileButton {
+    display: flex;
+    gap: 5px;
+    margin-top: 15px;
+}
+
+.buttonMystory {
+    border: none;
+    border-radius: 10px;
+    height: 20px;
+    width: 70px;
+    font-size: 10px;
+    cursor: pointer;
+    opacity: 0.7;
+    box-shadow: 2px 3px 9px 1px rgba(79,79,79,0.63);
+    -webkit-box-shadow: 2px 3px 9px 1px rgba(79,79,79,0.63);
+}
+
+.buttonMystory:hover {
+    background-color:lightgoldenrodyellow;
+}
+
+.buttonEdit {
+    border: none;
+    border-radius: 10px;
+    height: 20px;
+    width: 70px;
+    font-size: 10px;
+    cursor: pointer;
+    opacity: 0.7;
+    box-shadow: 2px 3px 9px 1px rgba(79,79,79,0.63);
+    -webkit-box-shadow: 2px 3px 9px 1px rgba(79,79,79,0.63);
+}
+
+.buttonEdit:hover {
+    background-color:lightgoldenrodyellow;
+}

@@ -1,0 +1,16 @@
+.appMain {
+    padding: 10px 10px;
+    width: 100vw;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.link {
+    text-decoration: none;
+    color: inherit;
+}

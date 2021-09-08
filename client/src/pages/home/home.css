@@ -1,0 +1,8 @@
+.homePage {
+    display: flex;
+    min-height:80vh
+}
+
+footer {
+    bottom:0;
+}

@@ -1,0 +1,171 @@
+.singlePostPage {
+    display: flex;
+    margin-top: 3px;
+    border-radius: 10px;
+    min-height: 87vh;
+    padding-left: 10px;
+}
+.singlePost {
+    flex: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(241, 212, 175);
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 2px 3px 9px 1px rgba(79,79,79,0.63);
+    -webkit-box-shadow: 2px 3px 9px 1px rgba(79,79,79,0.63);
+}
+
+.singleStory {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.singleStory .containerEdit {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 10px;
+    gap: 5px;
+    width: 100%;
+    height: 30px;
+}
+
+.singleStory .containerEdit button {
+    font-size: 11px;
+    border-radius: 10px;
+    height: 20px;
+    width: 50px;
+    opacity: 0.7;
+    background-color: rgb(253, 241, 241);
+    cursor: pointer;
+    border: none;
+    /* box-shadow: 2px 3px 9px 1px rgba(79,79,79,0.63);
+    -webkit-box-shadow: 2px 3px 9px 1px rgba(79,79,79,0.63); */
+}
+.singleStory .containerEdit button:hover {
+    background-color:lightgoldenrodyellow;
+}
+
+
+
+.singleStory .containerImg{
+    text-align: center;
+}
+.singlePost img {
+    height: 250px;
+    width: 350px;
+    margin-top: 20px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 2px 3px 9px 1px rgba(79,79,79,0.63);
+    -webkit-box-shadow: 2px 3px 9px 1px rgba(79,79,79,0.63);
+}
+
+.singlePostInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 15px;
+    margin-top: 20px;
+
+}
+
+.singlePostInfo .info {
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 600;
+
+} 
+
+
+.singlePost .title {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 30px;
+    font-weight: 900;
+    text-align: center;
+}
+
+.singlePost .desc {
+    margin-top: 20px;
+    word-break: break-all;
+    white-space: pre-wrap;
+    font-size: 14px;
+}
+
+.textareaEdit{
+    resize: none;
+    min-height:300px;
+    margin-top: 20px;
+    outline: none;
+    border: none;
+    /* padding-left: 10px; */
+    /* padding-top: 10px; */
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    width: 100vw;
+    position:absolute;
+    border: none;
+    z-index: 3;
+
+
+}
+
+.confirmDelete {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 250px;
+    border-radius: 10px;
+    background-color: rgb(255, 187, 148);
+    -webkit-box-shadow: 2px 3px 9px 1px rgba(79,79,79,0.63);
+    box-shadow: 2px 3px 9px 1px rgba(79,79,79,0.63);
+    z-index: 99999;
+}
+
+.buttonConfirm {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.buttonConfirm button {
+    width: 70px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    -webkit-box-shadow: 2px 3px 9px 1px rgba(79,79,79,0.63);
+    box-shadow: 2px 3px 9px 1px rgba(79,79,79,0.63);
+}
+
+.buttonConfirm button:hover{
+    background-color:lightgoldenrodyellow;
+}
+
+
+.inputTitle {
+    outline: none;
+    border: none;
+    margin-top: 30px;
+    font-size: 30px;
+    font-weight: 900;
+    text-align: center;
+    border-radius: 10px;
+}
