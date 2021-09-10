@@ -16,7 +16,7 @@ export default function SinglePost() {
   const [updateDesc, setUpdateDesc] = useState("");
 
   const { id } = useParams();
-  const { title, desc, username, createdAt } = postInfo;
+  const { title, desc, username, createdAt, photo } = postInfo;
   const date = new Date(createdAt).toDateString();
 
   useEffect(() => {
@@ -84,10 +84,7 @@ export default function SinglePost() {
               </button>
             </div>
             <div className="containerImg">
-              <img
-                src="https://images.unsplash.com/photo-1575351881847-b3bf188d9d0a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80"
-                alt=""
-              />
+              <img src={photo} alt="" />
             </div>
             <div className="title"> {title} </div>
             <p className="desc"> {desc} </p>
@@ -109,10 +106,7 @@ export default function SinglePost() {
               </button>
             </div>
             <div className="containerImg">
-              <img
-                src="https://images.unsplash.com/photo-1575351881847-b3bf188d9d0a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80"
-                alt=""
-              />
+              <img src={photo} alt="" />
             </div>
             <input
               className="inputTitle"
