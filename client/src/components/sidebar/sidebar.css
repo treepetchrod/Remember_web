@@ -37,7 +37,7 @@
 }
 
 .sidebarProfileUsername .username {
-    font-size: 15px;
+    font-size: 12px;
     font-weight: 500;
     font-style: italic;
 }
@@ -46,7 +46,6 @@
 .sidebarProfileButton {
     display: flex;
     gap: 5px;
-    margin-top: 15px;
 }
 
 .buttonMystory {

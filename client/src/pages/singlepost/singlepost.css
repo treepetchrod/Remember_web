@@ -55,7 +55,10 @@
 
 
 .singleStory .containerImg{
-    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* text-align: center; */
 }
 .singlePost img {
     height: 250px;
@@ -168,4 +171,33 @@
     font-weight: 900;
     text-align: center;
     border-radius: 10px;
+}
+
+.uploadImagePost{
+    display: flex;
+}
+
+
+.inputFilePost {
+    margin-top: 15px;
+    padding-left: 75px;
+    display: none;
+    /* border: solid 5px; */
+}
+
+.uploadImagePost label {
+    /* background-color: rgb(176, 243, 137);  */
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    height: 20px;
+    width: 110px;
+    margin-top: 8px;
+    padding: 10px;
+    border-radius: 10px;
+    align-items: center;
+    -webkit-box-shadow: 2px 3px 9px 1px rgba(79,79,79,0.63);
+    box-shadow: 2px 3px 9px 1px rgba(79,79,79,0.63);
+    cursor: pointer;
+    font-size: 12px;
 }

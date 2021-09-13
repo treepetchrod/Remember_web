@@ -30,7 +30,6 @@
 }
 .uploadImage{
     display: flex;
-    gap: 5px;
 }
 .previewIMG{
     background-color: rgb(97, 214, 243);

@@ -1,41 +1,76 @@
-import React from 'react'
-import './sidebar.css'
-import { Link } from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import React from "react";
+import "./sidebar.css";
+import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 export default function Sidebar() {
-    const [display, setDisplay] = useState("none")
-    const [username, setUsername] = useState(null)
-    
-    useEffect(() => {
-        const user = JSON.parse(localStorage.getItem("user"))
+  const [display, setDisplay] = useState("none");
+  const [id, setId] = useState("");
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [photoProfile, setPhotoProfile] = useState("https://firebasestorage.googleapis.com/v0/b/remember-web-nu.appspot.com/o/ImagesUser%2F24-248253_user-profile-default-image-png-clipart-png-download.png?alt=media&token=02e97499-96a0-4c2e-b6dc-8161c0820373");
+  const [editButton, setEditButton] = useState("inline-block");
+  const [saveButton, setSaveButton] = useState("none")
 
-        if (user) {
-            setDisplay("flex")
-            setUsername(user.username);
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("user"));
+
+    if (user) {
+      setDisplay("flex");
+    }
+
+    const getUserInfo = async () => {
+      try {
+        const res = await axios.post("/auth/userinfo", {
+          username: user.username,
+        });
+        if(res.data.photoProfile !== "") {
+          setPhotoProfile(res.data.photoProfile)
         }
-    },[])
+        setId(res.data._id);
+        setUsername(res.data.username);
+        setEmail(res.data.email);
+      } catch (err) {}
+    };
+    getUserInfo();
+  }, [username, email, id]);
 
-    return (
-        <div className="sidebar" style={{display:`${display}`}}>
-            <div className="sidebarProfile">
-                <img
-                    className="sidebarProfileImage" 
-                    src="https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                    alt="" 
-                />
-                <div className="sidebarProfileUsername">
-                    <div className="username">Treepetch</div>
-                </div>
-                <div className="sidebarProfileButton">
-                    <Link to={`/mystory/${username}`} className="link">
-                        <button className="buttonMystory">My Story</button>
-                    </Link>
-                    <Link to="/" className="link">
-                        <button className="buttonEdit">Edit Profile</button>
-                    </Link>
-                </div>
-            </div>
+
+  const toggleEditButton = () => {
+    setEditButton("none")
+    setSaveButton("inline-block")
+  };
+
+  const toggleSaveButton = () => {
+    setEditButton("inline-block")
+    setSaveButton("none")
+  };
+
+
+
+  return (
+    <div className="sidebar" style={{ display: `${display}` }}>
+      <div className="sidebarProfile">
+        <img
+          className="sidebarProfileImage"
+          src={photoProfile}
+          alt=""
+        />
+        <div className="sidebarProfileUsername">
+          <div className="username">{username}</div>
+          <div className="username">{email}</div>
         </div>
-    )
+        <div className="sidebarProfileButton">
+          <Link to={`/mystory/${username}`} className="link">
+            <button className="buttonMystory">My Story</button>
+          </Link>
+          <Link to="/" className="link">
+            <button className="buttonEdit" onClick={toggleEditButton} style={{display:editButton}}>Edit Profile</button>
+            <button className="buttonEdit" onClick={toggleSaveButton} style={{display:saveButton}}>Save</button>
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
 }

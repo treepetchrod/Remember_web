@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./writepost.css";
 import axios from "axios";
 import storage from "../../firebase";
+import { v4 as uuidv4 } from "uuid"
 
 export default function Writepost() {
   const [fileUrl, setFileUrl] = useState(
@@ -20,14 +21,13 @@ export default function Writepost() {
       const imageUrl = URL.createObjectURL(image);
       setFileUrl(imageUrl);
       setImageButton("rgb(176, 243, 137)");
-      console.log(image);
     }
   };
 
   useEffect(() => {
-    if (imageFile !== "" && title !=="" && desc !=="") {
-      setPostDisable(false)
-    }else{
+    if (imageFile !== "" && title !== "" && desc !== "") {
+      setPostDisable(false);
+    } else {
       setPostDisable(true);
     }
   }, [imageFile, title, desc]);
@@ -39,11 +39,15 @@ export default function Writepost() {
       const username = user.username;
 
       if (imageFile !== "") {
-        await storage.ref(`/images/${imageFile.name}`).put(imageFile);
+        const surnameFileSplit = imageFile.name.split(".")
+        const taqIMGname = "RememberIMG"
+        const dashIMGname = "-"
+        const nameFile = taqIMGname+dashIMGname+uuidv4()+dashIMGname+taqIMGname+"."+surnameFileSplit[1]
+        await storage.ref(`/images/${nameFile}`).put(imageFile);
 
         var url = await storage
           .ref("images")
-          .child(imageFile.name)
+          .child(nameFile)
           .getDownloadURL();
       } else {
         url =
@@ -61,7 +65,6 @@ export default function Writepost() {
       console.log(err);
     }
   };
-
   return (
     <form action="" className="writepost" onSubmit={handlePost}>
       <img className="writepostImg" src={fileUrl} alt="" />

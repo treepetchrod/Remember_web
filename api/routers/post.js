@@ -64,7 +64,7 @@ router.put("/edit/:id", async (req,res) => {
             {
             title:req.body.title,
             desc:req.body.desc,
-            // photo:req.body.photo
+            photo:req.body.photo
             })
         res.status(201).json("update success");
     }catch(err){

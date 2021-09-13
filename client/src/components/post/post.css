@@ -20,10 +20,18 @@
 
 .postTitle {
     margin-top: 7px;
+    padding-right: 10px;
+    padding-left: 10px;
     font-size: 18px;
     font-weight: 600;
-    text-align: center;
+    /* text-align: center; */
     height: auto;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: horizontal;
+    word-break: break-all;
+    white-space: pre-wrap;
     /* color: rgba(66, 29, 29, 0.575); */
 }
 
